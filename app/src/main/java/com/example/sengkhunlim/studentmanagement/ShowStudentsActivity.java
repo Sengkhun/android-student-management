@@ -2,24 +2,24 @@ package com.example.sengkhunlim.studentmanagement;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.widget.TextView;
-import android.widget.Toast;
+import android.widget.ListView;
 
 import java.io.FileNotFoundException;
-import java.io.InputStream;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class ShowStudentsActivity extends AppCompatActivity {
 
-    TextView student;
+    ListView student;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show_students);
 
-        student = findViewById( R.id.studentList );
         Scanner scan = null;
+        student = findViewById( R.id.studentList );
+        ArrayList<String> studentList = new ArrayList<>();
 
         try {
 
@@ -27,17 +27,15 @@ public class ShowStudentsActivity extends AppCompatActivity {
 
         } catch ( FileNotFoundException e ) { e.printStackTrace(); }
 
-        String studentList = "";
-
         while( scan.hasNextLine() ) {
 
-            String student = scan.nextLine();
-            student += "\t\t\t";
-            studentList += student;
+            studentList.add( scan.nextLine() );
 
         }
 
-        student.setText( studentList );
+        StudentInfoActivity adapter = new StudentInfoActivity( this, studentList );
+
+        student.setAdapter( adapter );
 
     }
 }
