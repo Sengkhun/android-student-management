@@ -27,13 +27,14 @@ public class ShowStudentsActivity extends AppCompatActivity {
 
         } catch ( FileNotFoundException e ) { e.printStackTrace(); }
 
+        // Read the information from the txt file into the arraylist
         while( scan.hasNextLine() ) {
 
             studentList.add( scan.nextLine() );
 
         }
 
-        StudentInfoActivity adapter = new StudentInfoActivity( this, studentList );
+        StudentInfoAdapter adapter = new StudentInfoAdapter( this, studentList );
 
         student.setAdapter( adapter );
 

@@ -51,10 +51,10 @@ public class AddActivity extends AppCompatActivity {
 
                     PrintStream out = new PrintStream( openFileOutput( "students.txt", MODE_APPEND ) );
                     out.println(
-                            id + ", " +
-                            name + ", " +
-                            sex + ", " +
-                            address + ", " +
+                            id + "," +
+                            name + "," +
+                            sex + "," +
+                            address + "," +
                             + year
                     );
                     out.close();
