@@ -8,24 +8,36 @@
     tools:context=".MainActivity">
 
     <Button
+        android:clickable="true"
         android:id="@+id/addNewStudent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:width="200dp"
-        android:text="Add New Student" />
+        android:background="@drawable/my_button"
+        android:text="Add New Student"
+        android:textColor="#ffffff" />
 
     <Button
+
+        android:clickable="true"
         android:id="@+id/showStudents"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:width="200dp"
-        android:text="Show Students" />
+        android:background="@drawable/my_button"
+        android:text="Show Students"
+        android:textColor="#ffffff" />
 
     <Button
+        android:clickable="true"
         android:id="@+id/deleteStudent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:width="200dp"
-        android:text="Delete" />
+        android:background="@drawable/my_button"
+        android:text="Delete"
+        android:textColor="#ffffff" />
 
 </LinearLayout>

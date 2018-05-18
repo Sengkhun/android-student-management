@@ -38,5 +38,7 @@ public class ShowStudentsActivity extends AppCompatActivity {
 
         student.setAdapter( adapter );
 
+        adapter.getCount();
+
     }
 }
